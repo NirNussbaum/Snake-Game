@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="Styles/master.css">
+    <link rel="shortcut icon" href="Images/snake_icon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main bg-none card container my-2 mx-auto rounded">
+        <h1 class="text-center pt-2">SNAKE GAME</h1>
+        <h2 class="text-center">Score: <span class="score">0</span></h2>
+        <div class="board shadow-lg border-dark mx-auto">
+            <div class="playForm card shadow-lg my-5 rounded">
+                <h3 class="mx-auto">Let's Have Some Fun!</h3>
+                <span class="mx-auto">
+                    <h5 class="my-4 pd-1">High Score: <span class="highScore">0</span></h5>
+                    <input type="checkbox" class="withwall form-check-input" checked>
+                    <span class="mx-2">With Wall</span>
+                </span>
+                <input type="button" value="Play" class="play mt-3 btn btn-success">
+            </div>
+        </div>
+        <span class="time">00:00:00</span></span>
+        <span class="lvl">Level - 1</span>
+
+        <script src="JS/audio.js"></script>
+        <script src="JS/dom.js"></script>
+        <script src="JS/snake.js"></script>
+        <script src="JS/food.js"></script>
+        <script src="JS/time.js"></script>
+        <script src="JS/snakeGame.js"></script>
+</body>
+
+</html>

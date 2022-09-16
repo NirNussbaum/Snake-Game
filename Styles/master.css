@@ -1,0 +1,141 @@
+body {
+    background-color: rgb(53, 128, 89);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+h1 {
+    font-family: fantasy;
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.main {
+    max-width: 475px;
+    background-color: rgb(53, 128, 89);
+    border: none;
+}
+
+.board {
+    display: grid;
+    grid-template-rows: repeat(26, 1fr);
+    grid-template-columns: repeat(26, 1fr);
+    height: 375px;
+    width: 450px;
+    border-width: 4px;
+    background-color: black;
+    border-color: rgb(109, 205, 0) !important;
+    border-style: dashed;
+}
+
+.score{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(139, 5, 5);
+}
+
+.playForm {
+    grid-row: 12;
+    grid-column: 13;
+    height: 190px;
+    width: 330px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: rgb(57, 75, 62);
+    opacity: 0.8;
+    background-color: rgb(109, 205, 0);
+}
+
+.playForm:hover {
+    opacity: 1;
+}
+
+.withwall {
+    margin-right: 15px;
+    padding: 7px;
+}
+
+.time {
+    font-size: 30px;
+}
+
+.lvl {
+   position: relative;
+   bottom: 48px;
+   font-size: 30px;
+   text-align: right; 
+}
+
+.gameOver {
+    width: 300px;
+    color: red;
+    font-weight: bold;
+    grid-row: 12;
+    grid-column: 23;
+}
+
+.playAgain {
+    margin-left: 35px;
+}
+
+.snake {
+    background-color: rgb(179, 49, 49);
+    border: .25vmin solid rgb(245, 50, 50);
+}
+
+.food {
+    background-color: rgb(193, 128, 8);
+    border: .25vmin solid rgb(241, 152, 0);
+}
+
+
+@media screen and (max-width: 470px) {
+    .main {
+        max-width: 355px;
+    }
+    .board {
+        height: 325px;
+        width: 335px;
+    }
+    h1 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .main {
+        max-width: 625px;
+    }
+    h1 {
+        font-size: 80px;
+    }
+    .board {
+        height: 500px;
+        width: 600px;
+    }
+    h2 {
+        font-size: 42px;
+    }
+    .time {
+        font-size: 38px;
+    }
+    .lvl {
+       position: relative;
+       bottom: 56px;
+       font-size: 38px;
+       text-align: right; 
+    }
+    .gameOver {
+        grid-row: 12;
+        grid-column: 16;
+    }
+    .playAgain {
+        margin-left: 60px;
+    }
+    .newHighScore{
+        padding-left: 30px;
+    }
+}
