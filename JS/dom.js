@@ -10,18 +10,15 @@ document.addEventListener('keydown', (e) => {
         if(dirY) return;
         dirX = 0;
         dirY = -1;
-    }
-    if(e.keyCode === 40) {
+    } else if(e.keyCode === 40) {
         if(dirY) return;
         dirX = 0;
         dirY = 1;
-    }
-    if(e.keyCode === 37) {
+    } else if(e.keyCode === 37) {
         if(dirX) return;
         dirX = -1;
         dirY = 0;
-    }
-    if(e.keyCode === 39) {
+    } else if(e.keyCode === 39) {
         if(dirX) return;
         dirX = 1;
         dirY = 0;

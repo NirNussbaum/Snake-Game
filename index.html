@@ -21,17 +21,25 @@
                 <h3 class="mx-auto">Let's Have Some Fun!</h3>
                 <span class="mx-auto">
                     <h5 class="my-4 pd-1">High Score: <span class="highScore">0</span></h5>
-                    <input type="checkbox" class="withwall form-check-input" checked>
-                    <span class="mx-2">With Wall</span>
+                    <div class="withWallDiv">
+                        <input type="checkbox" class="withwall form-check-input" checked>
+                        <span class="mx-4">With Wall</span>
+                    </div>
                 </span>
                 <input type="button" value="Play" class="play mt-3 btn btn-success">
             </div>
         </div>
         <span class="time">00:00:00</span></span>
         <span class="lvl">Level - 1</span>
-
+        <div class="mobileButtons mx-auto btn-group">
+            <input type="button" class="arrowLEFT btn btn-dark" value="&#8592">
+            <input type="button" class="arrowUP btn btn-dark" value="&#8593">
+            <input type="button" class="arrowDOWN btn btn-dark" value="&#8595">
+            <input type="button" class="arrowRIGHT btn btn-dark" value="&#8594">
+        </div>
         <script src="JS/audio.js"></script>
         <script src="JS/dom.js"></script>
+        <script src="JS/mobile.js"></script>
         <script src="JS/snake.js"></script>
         <script src="JS/food.js"></script>
         <script src="JS/time.js"></script>

@@ -82,26 +82,90 @@ h2 {
 }
 
 .snake {
-    background-color: rgb(179, 49, 49);
-    border: .25vmin solid rgb(245, 50, 50);
+    background-color: rgb(116, 23, 23);
+    border: .25vmin solid rgb(245, 10, 10);
 }
 
 .food {
-    background-color: rgb(193, 128, 8);
-    border: .25vmin solid rgb(241, 152, 0);
+    background-color: rgb(201, 140, 27);
+    border: .25vmin solid rgb(255, 162, 0);
 }
 
+.mobileButtons {
+    display: none;
+}
 
 @media screen and (max-width: 470px) {
     .main {
-        max-width: 355px;
+        max-width: 330px;
     }
     .board {
-        height: 325px;
-        width: 335px;
+        height: 400px;
+        width: 320px;
     }
     h1 {
-        font-size: 45px;
+        font-size: 42px;
+    }
+    .time {
+        font-size: 28px;
+    }
+    .lvl {
+       position: relative;
+       bottom: 43px;
+       font-size: 28px;
+       text-align: right; 
+    }
+    .playForm {
+        height: 250px;
+        width: 303px;
+    }
+    .withWallDiv {
+        font-size: 16px;
+        margin: 42px 0 21px 0;
+    }
+    .playForm h5 {
+        margin-top: 34px !important;
+    }
+    .playForm h3 {
+        margin-top: 7px;
+        font-size: 28px;
+    }
+    .mobileButtons {
+        display: flex;
+        margin: 15px 0 50px 0;
+    }
+    .mobileButtons input {
+        padding: 27px;
+    }
+    .arrowUP {
+        position: relative;
+        bottom: 40px;
+        left: 31px;
+    }
+    .arrowDOWN {
+        position: relative;
+        top: 45px;
+        right: 33px;
+    }
+    .arrowLEFT {
+        position: relative;
+        left: 25px;
+    }
+    .arrowRIGHT {
+        position: relative;
+        right: 25px;
+    }
+    .gameOver {
+        padding-left: 20px;
+    }
+    .gameOver h2 {
+        padding-left: 30px;
+    }
+    .playAgain {
+        margin-left: 60px;
+    }
+    .newHighScore{
+        padding-left: 30px;
     }
 }
 
