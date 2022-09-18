@@ -1,0 +1,207 @@
+body {
+    background-color: rgb(53, 128, 89);
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+h1 {
+    font-family: fantasy;
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+.main {
+    max-width: 475px;
+    background-color: rgb(53, 128, 89);
+    border: none;
+}
+
+.board {
+    display: grid;
+    grid-template-rows: repeat(26, 1fr);
+    grid-template-columns: repeat(26, 1fr);
+    height: 375px;
+    width: 450px;
+    border-width: 4px;
+    background-color: black;
+    border-color: rgb(109, 205, 0) !important;
+    border-style: dashed;
+}
+
+.score{
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(139, 5, 5);
+}
+
+.playForm {
+    grid-row: 12;
+    grid-column: 13;
+    height: 190px;
+    width: 330px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: rgb(57, 75, 62);
+    opacity: 0.8;
+    background-color: rgb(109, 205, 0);
+}
+
+.playForm:hover {
+    opacity: 1;
+}
+
+.withwall {
+    margin-right: 15px;
+    padding: 7px;
+}
+
+.time {
+    font-size: 30px;
+}
+
+.lvl {
+   position: relative;
+   bottom: 48px;
+   font-size: 30px;
+   text-align: right; 
+}
+
+.gameOver {
+    width: 300px;
+    color: red;
+    font-weight: bold;
+    grid-row: 12;
+    grid-column: 23;
+}
+
+.playAgain {
+    margin-left: 35px;
+}
+
+.snake {
+    background-color: rgb(116, 23, 23);
+    border: .25vmin solid rgb(245, 10, 10);
+}
+
+.food {
+    background-color: rgb(201, 140, 27);
+    border: .25vmin solid rgb(255, 162, 0);
+}
+
+.mobileButtons {
+    display: none;
+}
+
+@media screen and (max-width: 470px) {
+    .main {
+        max-width: 330px;
+    }
+    .board {
+        height: 400px;
+        width: 320px;
+    }
+    h1 {
+        font-family: serif;
+        font-size: 40px;
+    }
+    .time {
+        font-size: 26px;
+    }
+    .lvl {
+       position: relative;
+       bottom: 39px;
+       left: 14px;
+       font-size: 26px;
+       text-align: right; 
+    }
+    .playForm {
+        height: 250px;
+        width: 303px;
+    }
+    .withWallDiv {
+        font-size: 16px;
+        margin: 42px 0 21px 0;
+    }
+    .playForm h5 {
+        margin-top: 34px !important;
+    }
+    .playForm h3 {
+        margin-top: 11px;
+        font-size: 25px;
+    }
+    .mobileButtons {
+        display: flex;
+        margin: 15px 0 50px 0;
+    }
+    .mobileButtons input {
+        padding: 27px;
+    }
+    .arrowUP {
+        position: relative;
+        bottom: 40px;
+        left: 31px;
+    }
+    .arrowDOWN {
+        position: relative;
+        top: 45px;
+        right: 33px;
+    }
+    .arrowLEFT {
+        position: relative;
+        left: 25px;
+    }
+    .arrowRIGHT {
+        position: relative;
+        right: 25px;
+    }
+    .gameOver {
+        padding-left: 20px;
+    }
+    .gameOver h2 {
+        padding-left: 30px;
+    }
+    .playAgain {
+        margin-left: 60px;
+    }
+    .newHighScore{
+        padding-left: 30px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .main {
+        max-width: 625px;
+    }
+    h1 {
+        font-size: 80px;
+    }
+    .board {
+        height: 500px;
+        width: 600px;
+    }
+    h2 {
+        font-size: 42px;
+    }
+    .time {
+        font-size: 38px;
+    }
+    .lvl {
+       position: relative;
+       bottom: 56px;
+       font-size: 38px;
+       text-align: right; 
+    }
+    .gameOver {
+        grid-row: 12;
+        grid-column: 16;
+    }
+    .playAgain {
+        margin-left: 60px;
+    }
+    .newHighScore{
+        padding-left: 30px;
+    }
+}
