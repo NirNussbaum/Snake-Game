@@ -104,15 +104,17 @@ h2 {
         width: 320px;
     }
     h1 {
-        font-size: 42px;
+        font-family: serif;
+        font-size: 40px;
     }
     .time {
-        font-size: 28px;
+        font-size: 26px;
     }
     .lvl {
        position: relative;
-       bottom: 43px;
-       font-size: 28px;
+       bottom: 39px;
+       left: 14px;
+       font-size: 26px;
        text-align: right; 
     }
     .playForm {
@@ -127,8 +129,8 @@ h2 {
         margin-top: 34px !important;
     }
     .playForm h3 {
-        margin-top: 7px;
-        font-size: 28px;
+        margin-top: 11px;
+        font-size: 25px;
     }
     .mobileButtons {
         display: flex;
