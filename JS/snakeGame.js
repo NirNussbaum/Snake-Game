@@ -66,8 +66,8 @@ const checkGameOver = () => {
         if(currentscore > localStorage.getItem('highScore')) {
             const newHighScore = document.querySelector('.newHighScore');
             newHighScore.classList.remove('d-none');
+            localStorage.setItem('highScore', currentscore);
         } 
-        localStorage.setItem('highScore', currentscore);
         const playAgain = document.querySelector('.playAgain');
         playAgain.addEventListener('click', resetGame);
         return true;
