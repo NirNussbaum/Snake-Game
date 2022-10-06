@@ -187,20 +187,24 @@ h2 {
         padding: 27px;
     }
     .arrowUP {
+        touch-action: manipulation;
         position: relative;
         bottom: 40px;
         left: 31px;
     }
     .arrowDOWN {
+        touch-action: manipulation;
         position: relative;
         top: 45px;
         right: 33px;
     }
     .arrowLEFT {
+        touch-action: manipulation;
         position: relative;
         left: 25px;
     }
     .arrowRIGHT {
+        touch-action: manipulation;
         position: relative;
         right: 25px;
     }
