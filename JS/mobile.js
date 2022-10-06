@@ -1,4 +1,4 @@
-import { dirX, dirY } from "./dom";
+import { dirX, dirY } from "./dom.js";
 
 const arrowUPbut = document.querySelector('.arrowUP');
 const arrowDOWNbut = document.querySelector('.arrowDOWN');
