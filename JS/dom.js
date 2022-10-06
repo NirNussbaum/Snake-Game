@@ -1,33 +1,41 @@
-const board = document.querySelector('.board');
+import { gameStartSound } from './audio.js'
+import { stoper } from './time.js'
+import { game } from './snakeGame.js';
+import { snake } from './snake.js'
+
+export const board = document.querySelector('.board');
 const playButton = document.querySelector('.play');
 const withWallElement = document.querySelector('.withwall');
 
-let dirX = 0;
-let dirY = 0;
+export let dirX = 0;
+export let dirY = 0;
 document.addEventListener('keydown', (e) => {
-    e.preventDefault();
-    if(e.keyCode === 38) {
+    if(e.key === 'ArrowUp') {
         if(dirY) return;
+        e.preventDefault();
         dirX = 0;
         dirY = -1;
-    } else if(e.keyCode === 40) {
+    } else if(e.key === 'ArrowDown') {
         if(dirY) return;
+        e.preventDefault();
         dirX = 0;
         dirY = 1;
-    } else if(e.keyCode === 37) {
+    } else if(e.key === 'ArrowLeft') {
         if(dirX) return;
+        e.preventDefault();
         dirX = -1;
         dirY = 0;
-    } else if(e.keyCode === 39) {
+    } else if(e.key === 'ArrowRight') {
         if(dirX) return;
+        e.preventDefault();
         dirX = 1;
         dirY = 0;
     }
 });
 
-let gameOn;
-let watch;
-let withWall;
+export let gameOn;
+export let watch;
+export let withWall;
 playButton.addEventListener('click', () => {
     withWall = withWallElement.checked;
     playButton.classList.add('d-none');
@@ -38,7 +46,14 @@ playButton.addEventListener('click', () => {
     gameOn = setInterval(game, snake.snakeSpeed);
 });
 
+
+
 const highScore = document.querySelector('.highScore');
 if (localStorage.getItem('highScore')) {
     highScore.textContent = localStorage.getItem('highScore');
+}
+
+export const newGameSpeed = speedUp => {
+    clearInterval(gameOn);
+    gameOn = setInterval(game, snake.snakeSpeed - speedUp);
 }

@@ -4,7 +4,7 @@ let hours = 0;
 let minutes = 0;
 let seconds = 0;
 
-const stoper = () => {
+export const stoper = () => {
     seconds++;
     if(seconds === 60) {
         minutes++;

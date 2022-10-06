@@ -74,30 +74,77 @@ h2 {
     color: red;
     font-weight: bold;
     grid-row: 12;
-    grid-column: 23;
+    grid-column: 18;
+}
+
+.gameOver h2 {
+    padding-left: 30px;
+}
+
+#nickname {
+    padding: 6.5px 12px;
+    background-color: rgb(219, 77, 77);
+    color: rgb(0, 0, 0);
+    border: 0;
+    display: block;
+    font-size: 18px;
+}
+
+#nickname::placeholder{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#send {
+    position: relative;
+    left: 85px;
+    background-color: rgb(219, 77, 77);
+    color: black;
+    font-weight: bold;
+}
+
+.top3txt {
+    padding-left: 90px;
+}
+
+.newPersonalRecord{
+    position: relative;
+    right: 10px;
+}
+
+.top3scores{
+    padding-left: 45px !important;
 }
 
 .playAgain {
-    margin-left: 35px;
+    margin: 80px 0 0 65px;
+}
+
+.sendTop3 {
+    margin: 80px 0 0 65px;
 }
 
 .snake {
     background-color: rgb(116, 23, 23);
-    border: .25vmin solid rgb(245, 10, 10);
+    border: .05vmin solid rgb(245, 10, 10);
 }
 
 .food {
     background-color: rgb(201, 140, 27);
     border: .25vmin solid rgb(255, 162, 0);
-}
-
+} 
 .mobileButtons {
     display: none;
 }
 
 @media screen and (max-width: 470px) {
     .main {
-        max-width: 330px;
+        max-width: 340px;
+    }
+    .main h2 {
+        font-size: 32px;
+        margin-bottom: 0 !important;
     }
     .board {
         height: 400px;
@@ -105,7 +152,7 @@ h2 {
     }
     h1 {
         font-family: serif;
-        font-size: 40px;
+        font-size: 32px;
     }
     .time {
         font-size: 26px;
@@ -113,7 +160,7 @@ h2 {
     .lvl {
        position: relative;
        bottom: 39px;
-       left: 14px;
+       left: 10px;
        font-size: 26px;
        text-align: right; 
     }
@@ -134,7 +181,7 @@ h2 {
     }
     .mobileButtons {
         display: flex;
-        margin: 15px 0 50px 0;
+        margin: 2px 0 50px 0;
     }
     .mobileButtons input {
         padding: 27px;
@@ -157,17 +204,22 @@ h2 {
         position: relative;
         right: 25px;
     }
+    .newPersonalRecord{
+        position: relative;
+        left: 1px;
+    }
     .gameOver {
-        padding-left: 20px;
+        padding-left: 15px;
     }
     .gameOver h2 {
-        padding-left: 30px;
+        padding-left: 40px;
     }
     .playAgain {
-        margin-left: 60px;
+        margin-left: 70px;
     }
-    .newHighScore{
-        padding-left: 30px;
+    .newTop3 {
+        position: relative;
+        left: 12px;
     }
 }
 
@@ -196,12 +248,23 @@ h2 {
     }
     .gameOver {
         grid-row: 12;
-        grid-column: 16;
+        grid-column: 13;
     }
     .playAgain {
-        margin-left: 60px;
+        margin-left: 80px;
     }
-    .newHighScore{
-        padding-left: 30px;
+    .newPersonalRecord{
+        position: relative;
+        left: 7px;
+    }
+    .top3txt {
+        padding-left: 100px;
+    }
+    .top3scores{
+        padding-left: 55px !important;
+    }
+    .newTop3 {
+        position: relative;
+        left: 23px;
     }
 }

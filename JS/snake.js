@@ -1,5 +1,7 @@
-let snake = {
-    snakeSpeed:  400,
+import { withWall, board } from './dom.js'
+
+export let snake = {
+    snakeSpeed:  350,
     snakeGrowth: 2,
     body: [
         {x:6, y:5},
@@ -8,7 +10,7 @@ let snake = {
         ]
 }
 
-const drawSnake = () => {
+export const drawSnake = () => {
     board.innerHTML = ' ';
     snake.body.forEach(pos => {
         const snakeElement = document.createElement('div');
@@ -19,7 +21,7 @@ const drawSnake = () => {
     });
 }
 
-const onSnakePos = (x, y, ignoreHead = false) => {
+export const onSnakePos = (x, y, ignoreHead = false) => {
     if(ignoreHead) {
         for(let i = 1; i < snake.body.length; i++) {
             if(snake.body[i].x === x && snake.body[i].y === y) return true;
@@ -32,11 +34,11 @@ const onSnakePos = (x, y, ignoreHead = false) => {
     return false;
 }
 
-const checkWall = (head) => {
+export const checkWall = (head) => {
     if(withWall) return head.x < 1 || head.x > 26 || head.y < 1 || head.y > 26;
     else return false;
 }
 
-const checkSnakeHead = (head) => {
+export const checkSnakeHead = (head) => {
     return  onSnakePos(head.x, head.y, true);
 }
