@@ -6,6 +6,9 @@ export let food = {
     posY: 15
 }
 
+
+//Draw Food on the screen
+
 export const drawFood = () => {
     const foodElement = document.createElement('div');
     foodElement.style.gridRowStart = food.posY;
@@ -13,6 +16,8 @@ export const drawFood = () => {
     foodElement.classList.add('food');
     board.appendChild(foodElement);
 }
+
+//Get random position for the food
 
 export const randomPosFood = () => {
     while(onSnakePos(food.posX, food.posY)) {

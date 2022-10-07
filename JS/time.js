@@ -4,6 +4,8 @@ let hours = 0;
 let minutes = 0;
 let seconds = 0;
 
+//Stoper function
+
 export const stoper = () => {
     seconds++;
     if(seconds === 60) {

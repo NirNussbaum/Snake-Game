@@ -21,6 +21,8 @@ export const drawSnake = () => {
     });
 }
 
+//Cheak if the input position collision with the snake position
+
 export const onSnakePos = (x, y, ignoreHead = false) => {
     if(ignoreHead) {
         for(let i = 1; i < snake.body.length; i++) {
@@ -34,10 +36,14 @@ export const onSnakePos = (x, y, ignoreHead = false) => {
     return false;
 }
 
+//Cheak if the snake head collision with the wall
+
 export const checkWall = (head) => {
     if(withWall) return head.x < 1 || head.x > 26 || head.y < 1 || head.y > 26;
     else return false;
 }
+
+//Cheak collision with snake head
 
 export const checkSnakeHead = (head) => {
     return  onSnakePos(head.x, head.y, true);

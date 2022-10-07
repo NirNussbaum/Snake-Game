@@ -114,7 +114,7 @@ h2 {
 }
 
 .top3scores{
-    padding-left: 45px !important;
+    padding-left: 10px !important;
 }
 
 .playAgain {
@@ -137,6 +137,9 @@ h2 {
 .mobileButtons {
     display: none;
 }
+
+
+/* Mobile styles */
 
 @media screen and (max-width: 470px) {
     .main {
@@ -225,7 +228,12 @@ h2 {
         position: relative;
         left: 12px;
     }
+    .top3scores{
+        margin-left: 2px !important;
+    }
 }
+
+/*Big screens Style*/
 
 @media screen and (min-width: 1700px) {
     .main {
@@ -265,7 +273,7 @@ h2 {
         padding-left: 100px;
     }
     .top3scores{
-        padding-left: 55px !important;
+        margin-left: 15px !important;
     }
     .newTop3 {
         position: relative;

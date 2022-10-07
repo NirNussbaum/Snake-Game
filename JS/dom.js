@@ -3,12 +3,46 @@ import { stoper } from './time.js'
 import { game } from './snakeGame.js';
 import { snake } from './snake.js'
 
+
+//Start Play Button
 export const board = document.querySelector('.board');
 const playButton = document.querySelector('.play');
 const withWallElement = document.querySelector('.withwall');
 
+export let gameOn;
+export let watch;
+export let withWall;
+playButton.addEventListener('click', () => {
+    withWall = withWallElement.checked;
+    playButton.classList.add('d-none');
+    gameStartSound.play();
+    dirX = 1;
+    dirY = 0;
+    watch = setInterval(stoper, 1000);
+    gameOn = setInterval(game, snake.snakeSpeed);
+});
+
+
 export let dirX = 0;
 export let dirY = 0;
+
+//Get high score from local stroage
+
+const highScore = document.querySelector('.highScore');
+if (localStorage.getItem('highScore')) {
+    highScore.textContent = localStorage.getItem('highScore');
+}
+
+//Create new game speed 
+
+export const newGameSpeed = speedUp => {
+    clearInterval(gameOn);
+    gameOn = setInterval(game, snake.snakeSpeed - speedUp);
+}
+
+
+//Desktop listeners
+
 document.addEventListener('keydown', (e) => {
     if(e.key === 'ArrowUp') {
         if(dirY) return;
@@ -33,32 +67,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-export let gameOn;
-export let watch;
-export let withWall;
-playButton.addEventListener('click', () => {
-    withWall = withWallElement.checked;
-    playButton.classList.add('d-none');
-    gameStartSound.play();
-    dirX = 1;
-    dirY = 0;
-    watch = setInterval(stoper, 1000);
-    gameOn = setInterval(game, snake.snakeSpeed);
-});
-
-
-
-const highScore = document.querySelector('.highScore');
-if (localStorage.getItem('highScore')) {
-    highScore.textContent = localStorage.getItem('highScore');
-}
-
-export const newGameSpeed = speedUp => {
-    clearInterval(gameOn);
-    gameOn = setInterval(game, snake.snakeSpeed - speedUp);
-}
-
-//mobile
+//Mobile listeners
 
 const arrowUPbut = document.querySelector('.arrowUP');
 const arrowDOWNbut = document.querySelector('.arrowDOWN');

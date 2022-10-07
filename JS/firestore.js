@@ -18,12 +18,18 @@ const db = getFirestore();
 const colRef = collection(db, 'top_3');
 const q = query(colRef, orderBy('score', 'desc'), limit(3));
 
+
+//Real listener on DB
+
 export let top3Arr = [];
 onSnapshot(q, (snapshot) => {
     snapshot.docs.forEach((doc) => {
         top3Arr.push({ ...doc.data(), id: doc.id })
     })
 })
+
+
+//Add To DB
 
 export const addNewScoreToDB = (score, nickname) => {
     if (score > 0) {

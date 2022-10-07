@@ -4,6 +4,7 @@ import { gameOverSound, snakeEatSound } from './audio.js'
 import { food, drawFood, randomPosFood } from './food.js'
 import { snake, drawSnake, onSnakePos, checkWall, checkSnakeHead } from './snake.js'
 
+//Collision between snake and the food
 
 const snakeEatFood = () => {
     if (onSnakePos(food.posX, food.posY)) {
@@ -15,6 +16,8 @@ const snakeEatFood = () => {
         }
     }
 }
+
+//Update snake position
 
 const update = () => {
     if (dirX === 0 && dirY === 0) return;
@@ -32,6 +35,8 @@ const update = () => {
         else if (snake.body[0].y === 0) snake.body[0].y = 26;
     }
 }
+
+//Update score and game speed
 
 const lvlUpWhen = 2;
 let currentscore = 0, counter = 0, speedUp = 0, currentlvl = 1;
@@ -51,9 +56,13 @@ const scoreUp = () => {
     score.textContent = currentscore;
 }
 
+//Reset snake game
+
 const resetGame = () => {
     document.location.reload();
 }
+
+//New personal record update + update local storage
 
 const newPersonalRecord = () => {
     if (currentscore > localStorage.getItem('highScore')) {
@@ -62,6 +71,8 @@ const newPersonalRecord = () => {
         localStorage.setItem('highScore', currentscore);
     }
 }
+
+//Update game over top 3 table
 
 const updateTop3Table = (counter, top3Div, newChamp) => {
     if (counter === 0) {
@@ -80,14 +91,16 @@ const updateTop3Table = (counter, top3Div, newChamp) => {
     <span class="top3div">
     <h5 class="top3txt">TOP #3</h5>
     <div class="top3scores">
-        <h6 class="1st">1. ${top3Arr[0].nickname} ..... ${top3Arr[0].score}</h6>
-        <h6 class="2nd">2. ${top3Arr[1].nickname} ..... ${top3Arr[1].score}</h6>
-        <h6 class="3rd">3. ${top3Arr[2].nickname} ..... ${top3Arr[2].score}</h6>
+        <h6 class="1st">1. ${top3Arr[0].nickname} .... ${top3Arr[0].score}</h6>
+        <h6 class="2nd">2. ${top3Arr[1].nickname} .... ${top3Arr[1].score}</h6>
+        <h6 class="3rd">3. ${top3Arr[2].nickname} .... ${top3Arr[2].score}</h6>
     </div> 
     <input type="button" value="Play Again" class="playAgain btn btn-danger my-1">`;
     const playAgain = document.querySelector('.playAgain');
     playAgain.addEventListener('click', resetGame);
 }
+
+//Update on DB new top 3 score and get nickname from user
 
 const newTop3Score = () => {
     for (let i = 0; i < 3; i++) {
@@ -112,6 +125,7 @@ const newTop3Score = () => {
     }
 }
 
+//Game over board
 
 const newBoardGameOver = () => {
     board.innerHTML = `
@@ -120,17 +134,17 @@ const newBoardGameOver = () => {
       <h5 class="newPersonalRecord d-none">
       **New Personal Record**
      </h5>
-      <form class="newTop3 d-none">
+      <form class="newTop3  d-none">
          <h5>**New TOP #3 Record** </h5>
-        <input type="text" class="my-3" id="nickname" placeholder="Enter Your Nickname" required >
-        <input class="btn" type="submit" id="send" value="Send"></input>
+        <input type="text" class="my-3" id="nickname" placeholder="Enter Your Nickname" minlength="3" maxlength="12" required >
+        <input class="btn" type="submit" id="send" value="Send">
       </form>
       <span class="top3div">
       <h5 class="top3txt">TOP #3</h5>
       <div class="top3scores">
-          <h6 class="1st">1. ${top3Arr[0].nickname} ..... ${top3Arr[0].score}</h6>
-          <h6 class="2nd">2. ${top3Arr[1].nickname} ..... ${top3Arr[1].score}</h6>
-          <h6 class="3rd">3. ${top3Arr[2].nickname} ..... ${top3Arr[2].score}</h6>
+          <h6 class="1st">1. ${top3Arr[0].nickname} .... ${top3Arr[0].score}</h6>
+          <h6 class="2nd">2. ${top3Arr[1].nickname} .... ${top3Arr[1].score}</h6>
+          <h6 class="3rd">3. ${top3Arr[2].nickname} .... ${top3Arr[2].score}</h6>
       </div> 
       <input type="button" value="Play Again" class="playAgain btn btn-danger my-1">
       </span>
@@ -140,6 +154,8 @@ const newBoardGameOver = () => {
     newPersonalRecord();
     newTop3Score();
 }
+
+//Cheking game over --> wall, snake eat himself
 
 const checkGameOver = () => {
     const head = snake.body[0];
@@ -152,6 +168,9 @@ const checkGameOver = () => {
     }
     return false;
 }
+
+
+//Start snake game functions
 
 export const game = () => {
     snakeEatFood();
