@@ -1,20 +1,6 @@
 # Snake-Game
 Snake-Game is a classic game of snake, created in web form and inspired by the old mobile games. The game is built using a combination of JavaScript, HTML, CSS, and Bootstrap.
 
-Main Technologies Used:
-JavaScript:
-The game logic and functionality is mainly implemented in JavaScript. This includes the movement of the snake, collision detection, and scoring mechanism.
-
-HTML and CSS:
-The game is built with HTML and CSS, which provide the structure and styling of the web form.
-
-Bootstrap:
-Bootstrap is a popular framework used for building responsive and mobile-first web projects. It has been used in this project to help make the game more accessible on different screen sizes.
-
-Top 3 Table:
-
-
-
 # Main Technologies Used
 - JavaScript:
 The game logic and functionality is mainly implemented in JavaScript. This includes the movement of the snake, collision detection, and scoring mechanism.
